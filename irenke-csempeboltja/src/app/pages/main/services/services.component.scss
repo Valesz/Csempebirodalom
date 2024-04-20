@@ -1,0 +1,86 @@
+@use '@angular/material' as mat;
+@import '../../../../styles.scss';
+
+$primary: mat.get-theme-color($irenke-csempeboltja-theme, primary, default);
+$accent: mat.get-theme-color($irenke-csempeboltja-theme, accent, 900);
+$ligth-accent: mat.get-theme-color($irenke-csempeboltja-theme, accent, 600);
+
+.main {
+    background-color: $accent;
+    color: white;
+    height: fit-content;
+    min-height: fit-content;
+    padding: 16px 0px;
+    padding-bottom: 64px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.card-content p {
+    color: $accent;
+}
+
+.card-content > p {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+mat-button {
+    font-size: 1.3em;
+}
+
+mat-divider {
+    background-color: $accent;
+}
+
+mat-card-title {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+mat-card-subtitle {
+    text-align: justify;
+    margin: 32px 0;
+}
+
+mat-card {
+    min-height: 400px;
+    margin: 16px 64px;
+    padding: 16px 16px;
+    filter: drop-shadow(0px 0px 8px $ligth-accent);
+    transition: all .2s;
+}
+
+mat-card:hover {
+    transform: scale(110%);
+    filter: drop-shadow(0px 0px 8px white);
+}
+
+mat-card-header {
+    color: $accent;
+}
+
+@media only screen and (max-width: 900px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    mat-card {
+        margin: 32px;
+    }
+}

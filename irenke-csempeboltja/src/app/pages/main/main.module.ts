@@ -11,12 +11,14 @@ import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDividerModule } from '@angular/material/divider';
 import { RecommendComponent } from './recommend/recommend.component';
+import { ServicesComponent } from './services/services.component';
 
 @NgModule({
   declarations: [
     MainComponent,
     GalleryComponent,
-    RecommendComponent
+    RecommendComponent,
+    ServicesComponent
   ],
   imports: [
     CommonModule,

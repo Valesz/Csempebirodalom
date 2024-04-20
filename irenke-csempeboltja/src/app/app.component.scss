@@ -32,7 +32,7 @@ ul a:hover {
 }
 
 ul:hover a:not(:hover) {
-    filter: brightness(90%);
+    filter: brightness(90%) blur(.8px);
 }
 
 mat-icon {

@@ -15,10 +15,10 @@ export class GalleryComponent {
 
   ngOnInit() {
     this.images = [
-      new ImageItem({ src: 'assets/main_gallery_1.jpg'}),
-      new ImageItem({ src: 'assets/main_gallery_2.jpg'}),
-      new ImageItem({ src: 'assets/main_gallery_3.jpg'}),
-      new ImageItem({ src: 'assets/main_gallery_4.jpg'})
+      new ImageItem({ src: 'assets/main/main_gallery_1.jpg'}),
+      new ImageItem({ src: 'assets/main/main_gallery_2.jpg'}),
+      new ImageItem({ src: 'assets/main/main_gallery_3.jpg'}),
+      new ImageItem({ src: 'assets/main/main_gallery_4.jpg'})
     ];
   }
 }

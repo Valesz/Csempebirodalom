@@ -11,7 +11,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatListModule } from '@angular/material/list';
-import { MatButtonModule } from '@angular/material/button';
+import { ScrollingModule, ScrollDispatcher} from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -27,10 +27,11 @@ import { MatButtonModule } from '@angular/material/button';
     FlexLayoutModule,
     MenuModule,
     MatListModule,
-    MatButtonModule
+    ScrollingModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    ScrollDispatcher
   ],
   bootstrap: [AppComponent]
 })

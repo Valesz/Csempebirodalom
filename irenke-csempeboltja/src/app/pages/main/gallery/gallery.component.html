@@ -1,0 +1,12 @@
+<div class="main">
+    <div class="gallery-text">
+        <div>
+            <h1>Üdvözöljük a Csempebirodalomban!</h1>
+            <span>Építse ki saját birodalmát könnyen, egyszerűen!</span>
+            <div>
+                <button mat-flat-button color="primary" routerLink="/shop">Áruház</button>
+            </div>
+        </div>
+    </div>
+    <gallery [items]="images" imageSize="cover" [autoPlay]="true" [thumb]="false" [counter]="false" [nav]="false" [playerInterval]="5000"></gallery>
+</div>

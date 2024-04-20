@@ -2,6 +2,19 @@ mat-sidenav-container {
     height: 100vh;
 }
 
+mat-toolbar {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    justify-content: center;
+    transition: all .2s;
+    padding-right: 40px;
+}
+
+.opaque {
+    background-color: transparent;
+}
+
 a{
     text-decoration: none;
     color: white;
@@ -13,7 +26,7 @@ ul {
 }
 
 ul a:hover {
-    color: lightyellow;
+    color: lightcyan;
     font-size: 1.2em;
     text-decoration: underline;
 }
@@ -28,10 +41,6 @@ mat-icon {
 
 mat-button {
     margin-right: 16px;
-}
-
-mat-toolbar {
-    justify-content: center;
 }
 
 .navItems {

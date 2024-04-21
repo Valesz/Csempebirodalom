@@ -12,13 +12,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDividerModule } from '@angular/material/divider';
 import { RecommendComponent } from './recommend/recommend.component';
 import { ServicesComponent } from './services/services.component';
+import { TeamComponent } from './team/team.component';
 
 @NgModule({
   declarations: [
     MainComponent,
     GalleryComponent,
     RecommendComponent,
-    ServicesComponent
+    ServicesComponent,
+    TeamComponent
   ],
   imports: [
     CommonModule,

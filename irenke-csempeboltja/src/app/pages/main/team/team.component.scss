@@ -6,7 +6,8 @@ $accent: mat.get-theme-color($irenke-csempeboltja-theme, accent, 900);
 $ligth-accent: mat.get-theme-color($irenke-csempeboltja-theme, accent, 600);
 
 .main {
-    height: 100vh;
+    min-height: 500px;
+    height: fit-content;
 }
 
 .main > div {
@@ -19,7 +20,8 @@ h1 {
 }
 
 img {
-    width: 100%;
+    width: 70%;
+    margin: auto;
 }
 
 mat-card {
@@ -39,6 +41,7 @@ mat-card-subtitle {
 mat-card-content {
     margin: 32px auto 8px;
     height: 30vh;
+    min-height: 250px;
     text-align: center;
 }
 

@@ -1,0 +1,40 @@
+mat-sidenav-container {
+    height: 200vh;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    transition: all .2s;
+}
+
+ul {
+    transition: all .2s;
+}
+
+ul a:hover {
+    color: lightyellow;
+    font-size: 1.2em;
+    text-decoration: underline;
+}
+
+ul:hover a:not(:hover) {
+    filter: brightness(90%);
+}
+
+mat-icon {
+    display: block;
+}
+
+mat-button {
+    margin-right: 16px;
+}
+
+mat-toolbar {
+    justify-content: center;
+}
+
+.navItems {
+    text-decoration: none;
+    list-style-type: none;
+}

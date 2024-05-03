@@ -1,0 +1,17 @@
+<h1>Ajánlataink egy birodalom felépítéséhez!</h1>
+<div class="main" fxLayout="row wrap" fxLayoutGap="10px">
+    <mat-card *ngFor="let image of shopImages" fxFlex>
+        <img src="assets/shop/{{image.imgName}}" alt="">
+        <mat-card-header>
+            <mat-card-title>{{image.name}}</mat-card-title>
+            <mat-card-subtitle>{{image.type}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="card-content">
+                <p>{{image.cost}} Ft/db</p>
+                <button mat-raised-button color="accent">Kosárba</button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+      
+</div>

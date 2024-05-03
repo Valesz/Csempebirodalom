@@ -1,9 +1,4 @@
-@use '@angular/material' as mat;
-@import '../../../../styles.scss';
-
-$primary: mat.get-theme-color($irenke-csempeboltja-theme, primary, default);
-$accent: mat.get-theme-color($irenke-csempeboltja-theme, accent, 900);
-$ligth-accent: mat.get-theme-color($irenke-csempeboltja-theme, accent, 600);
+@import '../../../../themes.scss';
 
 .main {
     min-height: 500px;

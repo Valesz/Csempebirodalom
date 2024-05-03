@@ -12,11 +12,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import { ScrollingModule, ScrollDispatcher} from '@angular/cdk/scrolling';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -27,10 +30,12 @@ import { MatButtonModule } from '@angular/material/button';
     FlexLayoutModule,
     MenuModule,
     MatListModule,
+    ScrollingModule,
     MatButtonModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    ScrollDispatcher
   ],
   bootstrap: [AppComponent]
 })

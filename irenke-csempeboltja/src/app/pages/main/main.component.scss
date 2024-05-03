@@ -1,0 +1,13 @@
+@use '@angular/material' as mat;
+@import '../../../styles.scss';
+
+$primary: mat.get-theme-color($irenke-csempeboltja-theme, primary, default);
+$accent: mat.get-theme-color($irenke-csempeboltja-theme, accent, 900);
+$dark-accent: mat.get-theme-color($irenke-csempeboltja-theme, accent, 600);
+
+app-main-services {
+    filter: drop-shadow(0px 0px 10px black);
+}
+div {
+    height: fit-content;
+}

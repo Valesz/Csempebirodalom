@@ -1,0 +1,56 @@
+@use '@angular/material' as mat;
+@import '../../../../styles.scss';
+
+$primary: mat.get-theme-color($irenke-csempeboltja-theme, primary, default);
+$accent: mat.get-theme-color($irenke-csempeboltja-theme, accent, 900);
+$ligth-accent: mat.get-theme-color($irenke-csempeboltja-theme, accent, 600);
+
+.main {
+    min-height: 500px;
+    height: fit-content;
+}
+
+.main > div {
+    padding: 0 16px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+img {
+    width: 70%;
+    margin: auto;
+}
+
+mat-card {
+    min-height: fit-content;
+}
+
+mat-card-title {
+    margin-bottom: 8px;
+    font-size: 2em;
+}
+
+mat-card-subtitle {
+    margin: 8px auto 32px;
+    color: $primary;
+}
+
+mat-card-content {
+    margin: 32px auto 8px;
+    height: 30vh;
+    min-height: 250px;
+    text-align: center;
+}
+
+@media only screen and (min-width: 900px) {
+    mat-card {
+        width: 30%;
+    }
+
+    .main > div {
+        padding: 0 32px;
+    }
+}

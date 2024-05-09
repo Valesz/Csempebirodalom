@@ -14,6 +14,12 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { ScrollingModule, ScrollDispatcher} from '@angular/cdk/scrolling';
 import { FooterComponent } from './shared/footer/footer.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { AngularFireModule } from '@angular/fire/compat'
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { enviroment } from '../enviroment/enviroment';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,12 @@ import { FooterComponent } from './shared/footer/footer.component';
     MenuModule,
     MatListModule,
     ScrollingModule,
-    MatButtonModule
+    MatButtonModule,
+    AngularFireModule.initializeApp(enviroment.firebase),
+    //provideFirebaseApp(() => initializeApp(),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage())
   ],
   providers: [
     provideAnimationsAsync(),

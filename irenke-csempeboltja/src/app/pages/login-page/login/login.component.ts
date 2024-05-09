@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,12 +12,20 @@ export class LoginComponent {
   loginEmail = new FormControl<string>('')
   loginPassword = new FormControl<string>('')
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private authService:AuthService) {
 
   }
 
   login() {
-    console.log("Logged in as " + this.loginEmail.get)
+    this.authService.login(this.loginEmail.value as string, this.loginPassword.value as string).then(
+      cred => {
+        console.log(cred.user?.email)
+      }
+    ).catch(
+      error => {
+        console.log(error)
+      }
+    )
     this.router.navigateByUrl("/main")
   }
 }

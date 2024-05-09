@@ -101,6 +101,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "irenke-csempeboltja:build:production",
+              "serveTarget": "irenke-csempeboltja:serve:production"
+            },
+            "development": {
+              "buildTarget": "irenke-csempeboltja:build:development",
+              "serveTarget": "irenke-csempeboltja:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "csempebirodalom-11de9": {
+      "hosting": {
+        "irenke-csempeboltja": [
+          "csempebirodalom-11de9"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "csempebirodalom-11de9"
+  }
+}

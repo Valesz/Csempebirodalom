@@ -1,0 +1,9 @@
+div {
+    /*height: max(100vh, fit-content);*/
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

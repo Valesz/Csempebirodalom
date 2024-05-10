@@ -29,18 +29,14 @@ export class AppComponent {
   ngOnInit() {
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((evts: any) => {
       this.page = (evts.urlAfterRedirects as string).split('/')[1];
-      if (this.page === "main") {
-        this.isOnTop = true;
-      } else {
-        this.isOnTop = false;
-      }
+      this.isOnTop = true;
     });
 
     this.scrollDispatcher.scrolled().subscribe((event: any) => {
       const scroll = event.measureScrollOffset("top");
       let newIsOnTop = this.isOnTop;
       this.router.url
-      if (scroll > 0 || this.page !== "main") {
+      if (scroll > 0) {
         newIsOnTop = false
       } else {
         newIsOnTop = true;

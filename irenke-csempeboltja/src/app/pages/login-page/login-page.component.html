@@ -1,4 +1,12 @@
-<div>
-    <app-login></app-login>
-    <app-register></app-register>
-</div>
+<main>
+    <div class="container">
+        <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+            <mat-tab label="Bejelentkezés">
+                <app-login class="item selected"></app-login>
+            </mat-tab>
+            <mat-tab label="Regisztráció">
+                <app-register class="item selected"></app-register>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</main>

@@ -1,13 +1,15 @@
-<div>
+<main>
     <h1>Bejelentkezés</h1>
-    <mat-form-field>
-        <mat-label>Email</mat-label>
-        <input matInput [formControl]="loginEmail" required placeholder="valaki@gmail.com">
-        <mat-error *ngIf="!loginEmail.valid">Helytelen email!</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Jelszó</mat-label>
-        <input matInput [formControl]="loginPassword" required [type]="true ? 'password' : 'text'">
-    </mat-form-field>
+    <div class="formGroup">
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput [formControl]="loginEmail" required placeholder="valaki@gmail.com">
+            <mat-error *ngIf="!loginEmail.valid">Helytelen email!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Jelszó</mat-label>
+            <input matInput [formControl]="loginPassword" required [type]="true ? 'password' : 'text'">
+        </mat-form-field>
+    </div>
     <button mat-raised-button (click)="login()" color="primary">Bejelentkezés</button>
-</div>
+</main>

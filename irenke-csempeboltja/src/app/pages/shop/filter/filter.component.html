@@ -1,0 +1,16 @@
+<div class="container">
+    <mat-form-field>
+        <mat-label>Termék kereső</mat-label>
+        <input type="text"
+               placeholder="Kedvenc termékem neve"
+               matInput
+               [formControl]="nameFilter"
+               [matAutocomplete]="auto"
+               (change)="emptyValueHandle()">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          @for (option of filteredOptions | async; track option) {
+            <mat-option [value]="option">{{option}}</mat-option>
+          }
+        </mat-autocomplete>
+      </mat-form-field>
+</div>

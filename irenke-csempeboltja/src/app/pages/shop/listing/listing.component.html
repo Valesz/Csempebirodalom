@@ -1,15 +1,17 @@
 <div class="container">
-    <mat-card *ngFor="let product of products;">
-        <mat-card-header>
-            <mat-card-title>{{product.name}}</mat-card-title>
-            <mat-card-subtitle>{{product.type}}</mat-card-subtitle>
-        </mat-card-header>
-        <img *ngIf="product.imgUrl.startsWith('h')" ngSrc="{{ product.imgUrl }}" height="200" width="200" priority>
-        <mat-card-content>
-            <div class="card-content">
-                <p>{{product.cost}} Ft/db</p>
-                <button mat-raised-button color="accent">Kosárba</button>
-            </div>
-        </mat-card-content>
-    </mat-card>
+    @for (product of fillteredProducts | async; track products) {
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{product.name}}</mat-card-title>
+                <mat-card-subtitle>{{product.type}}</mat-card-subtitle>
+            </mat-card-header>
+            <img *ngIf="product.imgUrl.startsWith('h')" ngSrc="{{ product.imgUrl }}" height="200" width="200" priority>
+            <mat-card-content>
+                <div class="card-content">
+                    <p>{{product.cost}} Ft/db</p>
+                    <button (click)="addItemToCart(product.id)" mat-raised-button color="primary">Kosárba</button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    }
 </div>

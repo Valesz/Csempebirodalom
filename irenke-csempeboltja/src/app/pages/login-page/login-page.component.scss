@@ -1,13 +1,13 @@
 main {
     /*height: max(100vh, fit-content);*/
-    height: 90vh;
+    height: 100vh;
     overflow: hidden;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: rgb(8,7,5);
-    background: linear-gradient(0deg, rgba(8,7,5,1) 0%, rgba(50,49,45,1) 78%);
+    background: rgb(50,49,45);
+    background: radial-gradient(circle, rgba(50,49,45,1) 0%, rgba(8,7,5,1) 100%); 
 }
 
 .container {

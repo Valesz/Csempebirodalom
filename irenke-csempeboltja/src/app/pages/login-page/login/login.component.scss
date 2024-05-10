@@ -12,9 +12,15 @@ main {
 }
 
 .formGroup {
-    width: 350px;
+    width: 250px;
 }
 
 button {
     margin-top: 15px;
+}
+
+@media screen and (min-width: 600px) {
+    .formGroup {
+        width: 350px;
+    }
 }

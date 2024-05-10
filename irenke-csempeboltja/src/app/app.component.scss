@@ -47,3 +47,10 @@ mat-button {
     text-decoration: none;
     list-style-type: none;
 }
+
+@media screen and (max-width: 900px) {
+    mat-toolbar {
+        padding-right: 20px;
+        padding-left: 30px;
+    }
+}

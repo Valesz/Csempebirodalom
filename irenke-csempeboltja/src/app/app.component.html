@@ -1,6 +1,6 @@
 <mat-sidenav-container>
     <mat-sidenav position="end" #sidenav>
-        <app-menu></app-menu>
+        <app-menu [loggedInUser]="loggedInUser" (onLogout)="logout()" (onCloseSidenav)="closeSidenav(sidenav)"></app-menu>
     </mat-sidenav>
     <mat-sidenav-content color="primary" cdkScrollable>
         <mat-toolbar color="primary" [ngClass]="{'opaque': isOnTop}">
@@ -13,7 +13,8 @@
                     <li><a routerLink="main">Kezdőlap</a></li>
                     <li><a routerLink="shop">Áruház</a></li>
                     <li><a routerLink="cart">Kosár</a></li>
-                    <li><a routerLink="login">Login</a></li>
+                    <li *ngIf="!loggedInUser"><a routerLink="login">Bejelentkezés</a></li>
+                    <li *ngIf="loggedInUser"><a (click)="logout()" routerLink="login">Kijelentkezés</a></li>
                 </ul>
             </div>
         </mat-toolbar>

@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../../../shared/models/product';
 import { Observable } from 'rxjs';
-import { ProductService } from '../../../shared/services/product.service';
+import { CartService } from '../../../shared/services/cart.service';
 
 @Component({
   selector: 'app-shop-listing',
@@ -11,12 +11,14 @@ import { ProductService } from '../../../shared/services/product.service';
 export class ListingComponent {
   @Input() fillteredProducts?: Observable<Array<Product>>;
   @Input() products?: Array<Product>;
+  @Output() itemAddedtoCart = new EventEmitter<boolean>();
 
   constructor(
-    private productService: ProductService
+    private cartService: CartService
   ) {}
 
   addItemToCart(id: string) {
-    this.productService.putIntoCart(id)
+    this.cartService.putIntoCart(id);
+    this.itemAddedtoCart.emit(true);
   }
 }

@@ -4,6 +4,8 @@ import { Product } from '../../shared/models/product';
 import { AsyncPipe } from '@angular/common';
 import { FormControl } from '@angular/forms';
 import { Observable, first, map, of, startWith, take } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 @Component({
   selector: 'app-shop',
@@ -21,7 +23,8 @@ export class ShopComponent implements OnInit {
   ofOptions?: Observable<Array<string>>;
 
   constructor(
-    private productService: ProductService
+    private productService: ProductService,
+    private _snackbar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -67,6 +70,12 @@ export class ShopComponent implements OnInit {
 
   searchChanged(event:string | null) {
     this.nameFilter.setValue(event);
+  }
+
+  openSnackbar() {
+    this._snackbar.openFromComponent(FeedbackComponent, {
+      duration: 1.5 * 1000
+    });
   }
 
 }

@@ -21,7 +21,7 @@ export class ProductService {
   }
 
   getById(id: string) {
-    return this.afs.collection<Product>(this.collection).doc(id);
+    return this.afs.collection<Product>(this.collection).doc(id).valueChanges();
   }
 
   getByName(name: string) {
@@ -30,17 +30,6 @@ export class ProductService {
   
   loadImage(imageUrl: string) {
     return this.storage.ref(imageUrl).getDownloadURL();
-  }
-
-  putIntoCart(id: string) {
-    if (sessionStorage.getItem('cart') !== null) {
-      let curCart: string = sessionStorage.getItem('cart')!;
-      curCart += ";" + id;
-      console.log(curCart);
-      sessionStorage.setItem('cart', curCart);
-    } else {
-      sessionStorage.setItem('cart', id);
-    }
   }
 
 }

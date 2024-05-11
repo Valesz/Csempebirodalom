@@ -3,5 +3,5 @@
         Hadiraktár
     </h1>
     <app-shop-filter [filteredOptions]="nameFilter.value === '' ? ofOptions : filteredOptions" (nameEmitter)="searchChanged($event)"></app-shop-filter>
-    <app-shop-listing [products]="products" [fillteredProducts]="filteredProducts"></app-shop-listing>
+    <app-shop-listing [products]="products" [fillteredProducts]="filteredProducts" (itemAddedtoCart)="openSnackbar()"></app-shop-listing>
 </main>

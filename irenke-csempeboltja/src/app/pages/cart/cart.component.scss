@@ -1,0 +1,79 @@
+main {
+    min-height: 100vh;
+    height: fit-content;
+    background: rgb(50,49,45);
+    background: radial-gradient(circle, rgba(50,49,45,1) 0%, rgba(8,7,5,1) 100%);
+    padding: 40px;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 60px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: fit-content;
+    margin: auto;
+}
+
+.itemContainer mat-card {
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+}
+
+.itemContainer mat-card-content {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.itemContainer mat-card-header {
+    margin-bottom: 15px;
+}
+
+mat-divider {
+    margin: 15px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 150px;
+    margin-right: 15px;
+}
+
+.itemContainer button {
+    display: block;
+    margin: 5px auto;
+}
+
+.payContainer {
+    width: fit-content;
+    margin: 40px auto 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.payContainer > button {
+    font-size: 1.5rem;
+    width: 200px;
+    height: fit-content;
+    padding: 20px 40px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}

@@ -47,12 +47,18 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
                   "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/enviroment/enviroment.ts",
+                  "with": "src/enviroment/enviroment.prod.ts"
                 }
               ],
               "outputHashing": "all"

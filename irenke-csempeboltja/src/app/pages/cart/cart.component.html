@@ -1,0 +1,38 @@
+<main>
+    <h1>Kosár</h1>
+    <div class="container">
+        @for (product of productsInCartObs | async; track productsInCart) {
+            <mat-card class="itemContainer">
+                <mat-card-header>
+                  <mat-card-title>{{product[0].name}}</mat-card-title>
+                  <mat-card-subtitle>{{product[0].type}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <img mat-card-image src="{{product[0].imgUrl}}" alt="Photo of {{product[0].name}}">
+                    <div class="item">
+                        <p>Darab:</p>
+                        <p>{{product[1]}}</p>
+                    </div>
+                    <mat-divider [vertical]="true"></mat-divider>
+                    <div class="item">
+                        <p>Összeg:</p>
+                        <p>{{product[1] * product[0].cost}} Ft</p>
+                    </div>
+                    <mat-divider [vertical]="true"></mat-divider>
+                    <div class="item">
+                        <button mat-raised-button color="primary" (click)="addItem(product[0].id)">+</button>
+                        <button mat-raised-button color="warn" (click)="removeItem(product[0].id)">-</button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        }
+    </div>
+    <div *ngIf="productsInCart.length > 0" class="payContainer">
+        <button mat-raised-button color="warn" (click)="clearCart()">Törlés</button>
+        <button mat-raised-button color="primary" (click)="clearCart()">
+            <a href="http://www.eotvos.u-szeged.hu/sites/default/files/muhelyek/adrienne182/EKA_k%C3%B6sz%C3%B6nj%C3%BCk_2021.jpg" target="_blank">
+                Fizetés
+            </a>
+        </button>
+    </div>
+</main>

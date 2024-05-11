@@ -9,16 +9,19 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ListingComponent } from './listing/listing.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { FilterComponent } from './filter/filter.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 
 @NgModule({
   declarations: [
     ShopComponent,
     ListingComponent,
-    FilterComponent
+    FilterComponent,
+    FeedbackComponent
   ],
   imports: [
     CommonModule,
@@ -28,6 +31,7 @@ import { FilterComponent } from './filter/filter.component';
     MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSnackBarModule,
     ReactiveFormsModule,
     NgOptimizedImage,
     AsyncPipe

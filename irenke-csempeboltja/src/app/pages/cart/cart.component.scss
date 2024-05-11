@@ -37,6 +37,11 @@ h1 {
     margin-bottom: 15px;
 }
 
+p {
+    font-size: 1.5rem;
+    margin: 10px;
+}
+
 mat-divider {
     margin: 15px;
 }
@@ -56,6 +61,7 @@ img {
 .itemContainer button {
     display: block;
     margin: 5px auto;
+    font-size: 2rem;
 }
 
 .payContainer {
@@ -76,4 +82,47 @@ img {
 a {
     color: white;
     text-decoration: none;
+}
+
+@media screen and (max-width:900px) {
+    .payContainer {
+        flex-direction: column-reverse;
+    }
+
+    .itemContainer mat-card-content {
+        flex-direction: column;
+    }
+
+    .itemContainer button {
+        margin-top: 20px;
+        font-size: 3rem;
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .item {
+        flex-direction: row;
+    }
+
+    .item:nth-child(2) {
+        margin-bottom: 0px;
+    }
+
+    .item:nth-child(3) {
+        margin-top: 0;
+    }
+
+    mat-divider {
+        display: none;
+    }
+
+    img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .itemContainer {
+        width: 300px;
+        height: fit-content;
+    }
 }

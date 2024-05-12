@@ -1,0 +1,74 @@
+@import "./../shop/listing/listing.component.scss";
+
+main {
+    min-height: 100vh;
+    height: fit-content;
+    background: rgb(50,49,45);
+    background: radial-gradient(circle, rgba(50,49,45,1) 0%, rgba(8,7,5,1) 100%);
+    padding: 40px;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 60px;
+}
+
+.productContainer {
+    border: 5px solid white;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+mat-card {
+    border-radius: 20px;
+    transition: 0.5s all;
+    min-height: fit-content;
+}
+
+button {
+    border-radius: 20px;
+    margin: 5px;
+}
+
+mat-card:first-child {
+    height: 513px;
+}
+
+mat-card:first-child mat-card-title {
+    margin-bottom: 40px;
+}
+
+mat-card-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 900px) {
+    main {
+        
+        padding: 40px 10px 40px;
+    }
+
+    .productContainer {
+        padding: 10px;
+    }
+}

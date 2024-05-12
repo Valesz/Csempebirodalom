@@ -15,6 +15,7 @@ import { AuthService } from './shared/services/auth.service';
 	isOnTop = true;
 	page: string;
 	loggedInUser?: firebase.default.User | null;
+	isAdmin: boolean = false;
 
 	constructor(
 		private scrollDispatcher: ScrollDispatcher,

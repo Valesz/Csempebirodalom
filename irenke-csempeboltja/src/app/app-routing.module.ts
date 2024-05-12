@@ -16,7 +16,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   { path: 'login', loadChildren: () => import('./pages/login-page/login-page.module').then(m => m.LoginPageModule) },
-  { path: 'cart', loadChildren: () => import('./pages/cart/cart.module').then(m => m.CartModule) }
+  { path: 'cart', loadChildren: () => import('./pages/cart/cart.module').then(m => m.CartModule) },
+  { path: 'admin', loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule) }
 ];
 
 @NgModule({

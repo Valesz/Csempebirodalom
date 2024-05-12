@@ -1,0 +1,63 @@
+<main>
+    <h1>Admin Panel</h1>
+    <div class="productContainer">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Új termék hozzáadása</mat-card-title>
+                <mat-form-field>
+                    <mat-label>Termék neve</mat-label>
+                    <input matInput [formControl]="nameForm">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Termék típusa</mat-label>
+                    <input matInput [formControl]="typeForm">
+                </mat-form-field>
+            </mat-card-header>
+            <input [formControl]="imgForm" (change)="selectFile($event)" type="file">
+            <mat-card-content>
+                <div class="card-content">
+                    <mat-form-field>
+                        <mat-label>Termék ára (db/ft)</mat-label>
+                        <input matInput [formControl]="costForm">
+                    </mat-form-field>
+
+                    <button mat-raised-button color="primary" (click)="saveProduct()" [disabled]="editProduct.length > 0">Mentés</button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        @for (product of productsObs | async; track products) {
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title *ngIf="!checkEdit(product.id)">{{product.name}}</mat-card-title>
+                    <mat-form-field *ngIf="checkEdit(product.id)">
+                        <mat-label>Termék neve</mat-label>
+                        <input matInput [formControl]="nameForm" value="{{product.name}}">
+                    </mat-form-field>
+                    <mat-card-subtitle *ngIf="!checkEdit(product.id)">{{product.type}}</mat-card-subtitle>
+                    <mat-form-field *ngIf="checkEdit(product.id)">
+                        <mat-label>Termék típusa</mat-label>
+                        <input matInput [formControl]="typeForm" value="{{product.type}}">
+                    </mat-form-field>
+                </mat-card-header>
+                <img *ngIf="product.imgUrl.startsWith('h')" ngSrc="{{ product.imgUrl }}" height="200" width="200" priority>
+                <input *ngIf="checkEdit(product.id)" [formControl]="imgForm" (change)="selectFile($event)" type="file">
+                
+                <mat-card-content>
+                    <div class="card-content">
+
+                        <mat-form-field *ngIf="checkEdit(product.id)">
+                            <mat-label>Termék ára (db/ft)</mat-label>
+                            <input matInput [formControl]="costForm" value="{{product.cost}}">
+                        </mat-form-field>
+                        <p *ngIf="!checkEdit(product.id)">{{product.cost}} Ft/db</p>
+
+                        <button mat-raised-button color="primary" (click)="updateProduct(product.id)" *ngIf="checkEdit(product.id)">Mentés</button>
+                        <button mat-raised-button color="accent" (click)="closeEditProduct(product.id)" *ngIf="checkEdit(product.id)">Mégse</button>
+                        <button mat-raised-button color="primary" (click)="openEditProduct(product.id)" *ngIf="!checkEdit(product.id)">Változtat</button>
+                        <button mat-raised-button color="warn" (click)="deleteProduct(product.id)" *ngIf="!checkEdit(product.id)">Törlés</button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        }
+    </div>
+</main>

@@ -13,6 +13,7 @@
                     <li><a routerLink="main">Kezdőlap</a></li>
                     <li><a routerLink="shop">Áruház</a></li>
                     <li><a routerLink="cart">Kosár</a></li>
+                    <li><a routerLink="admin">Admin</a></li>
                     <li *ngIf="!loggedInUser"><a routerLink="login">Bejelentkezés</a></li>
                     <li *ngIf="loggedInUser"><a (click)="logout()" routerLink="login">Kijelentkezés</a></li>
                 </ul>

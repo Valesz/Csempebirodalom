@@ -1,0 +1,17 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: fit-content;
+    background: rgb(50,49,45);
+    background: radial-gradient(circle, rgba(50,49,45,1) 0%, rgba(8,7,5,1) 100%);
+    padding: 40px;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 60px;
+}

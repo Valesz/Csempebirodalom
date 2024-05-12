@@ -34,6 +34,14 @@ const routes: Routes = [
     path: '',
     redirectTo: 'main',
     pathMatch: 'full'
+  },
+  { 
+    path: 'not-found',
+    loadChildren: () => import('./pages/not-found/not-found.module').then(m => m.NotFoundModule) 
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./pages/not-found/not-found.module').then(m => m.NotFoundModule)
   }
 ];
 

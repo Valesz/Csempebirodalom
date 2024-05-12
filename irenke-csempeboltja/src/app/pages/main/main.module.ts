@@ -13,6 +13,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { RecommendComponent } from './recommend/recommend.component';
 import { ServicesComponent } from './services/services.component';
 import { TeamComponent } from './team/team.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TeamComponent } from './team/team.component';
     MatIconModule,
     MatCardModule,
     FlexLayoutModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSnackBarModule
   ]
 })
 export class MainModule { }

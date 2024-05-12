@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../models/product';
 import { ProductService } from './product.service';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +22,6 @@ export class CartService {
     if (sessionStorage.getItem('cart') !== null && sessionStorage.getItem('cart')!.length > 0) {
       let curCart: string = sessionStorage.getItem('cart')!;
       curCart += ";" + product_id;
-      console.log(curCart);
       sessionStorage.setItem('cart', curCart);
     } else {
       sessionStorage.setItem('cart', product_id);

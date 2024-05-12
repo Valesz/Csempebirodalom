@@ -3,7 +3,7 @@ export const enum roles {
     admin = "ROLE_ADMIN"
 };
 
-export const ShopElements = [
+/*export const ShopElements = [
     {
         'id':0,
         'name':'Idő Múlása',
@@ -74,4 +74,4 @@ export const ShopElements = [
         'type':'Díszcsempe',
         'cost':1500
     }
-]
+]*/

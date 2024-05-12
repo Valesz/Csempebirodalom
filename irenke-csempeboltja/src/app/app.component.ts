@@ -1,7 +1,7 @@
 import { Component, NgZone } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { ScrollDispatcher, CdkScrollable } from "@angular/cdk/scrolling";
-import { Navigation, NavigationEnd, Router } from '@angular/router';
+import { ScrollDispatcher } from "@angular/cdk/scrolling";
+import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { AuthService } from './shared/services/auth.service';
 import { UserService } from './shared/services/user.service';

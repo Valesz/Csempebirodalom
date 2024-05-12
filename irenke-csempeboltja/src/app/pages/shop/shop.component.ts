@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../shared/services/product.service';
 import { Product } from '../../shared/models/product';
-import { AsyncPipe } from '@angular/common';
 import { FormControl } from '@angular/forms';
-import { Observable, first, map, of, startWith, take } from 'rxjs';
+import { Observable, map, of, startWith } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FeedbackComponent } from './feedback/feedback.component';
 

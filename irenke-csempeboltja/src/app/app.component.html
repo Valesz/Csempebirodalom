@@ -4,7 +4,7 @@
     </mat-sidenav>
     <mat-sidenav-content color="primary" cdkScrollable>
         <mat-toolbar color="primary" [ngClass]="{'opaque': isOnTop}">
-            <h1>Csempebirodalom</h1>
+            <a routerLink="main"><h1>Csempebirodalom</h1></a>
             <mat-button fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.gt-xs mat-icon-button (click)="toggleSideNav(sidenav)">
                 <mat-icon>menu</mat-icon>
             </mat-button>

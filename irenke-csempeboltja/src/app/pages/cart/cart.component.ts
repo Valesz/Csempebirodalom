@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../shared/models/product';
 import { ProductService } from '../../shared/services/product.service';
 import { CartService } from '../../shared/services/cart.service';
-import { Observable, of, take } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-cart',

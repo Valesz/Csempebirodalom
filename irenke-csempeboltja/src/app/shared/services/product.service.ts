@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { Observable, finalize, first, take } from 'rxjs';
+import { Observable, finalize, first } from 'rxjs';
 import { Product } from '../models/product';
 
 @Injectable({
@@ -19,6 +19,10 @@ export class ProductService {
 
   getAll(): Observable<Array<Product>> {
     return this.afs.collection<Product>(this.collection).valueChanges();
+  }
+
+  getForMain() {
+    return this.afs.collection<Product>(this.collection, ref => ref.limit(4)).valueChanges();
   }
 
   getById(id: string) {

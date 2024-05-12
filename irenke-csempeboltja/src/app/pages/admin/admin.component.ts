@@ -65,7 +65,9 @@ export class AdminComponent implements OnInit {
 
   selectFile(event: any) {
     this.selectedFile = event.target.files;
-    if (this.selectedFile === undefined || this.selectedFile!.item(0)!.size > 100000000)
+    let extension = this.selectedFile?.item(0)?.name.split('.').at(this.selectedFile.item(0)!.name.split('.').length-1)
+    if ((this.selectedFile === undefined || this.selectedFile!.item(0)!.size > 3000000) ||
+        !["jpg", "jpeg", "png", "gif"].includes(extension || ""))
     {
       this.selectedFile = undefined;
       this.imgForm.setValue("");

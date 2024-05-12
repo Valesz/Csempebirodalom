@@ -1,0 +1,22 @@
+<main>
+    <h1>Profil</h1>
+    <div class="container">
+        <div>
+            <h2>Felhasználónév:</h2>
+            <p>{{loggedInUser?.displayName}}</p>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div>
+            <h2>Email cím:</h2>
+            <p>{{loggedInUser?.email}}</p>
+        </div>
+        <mat-divider></mat-divider>
+        <div *ngIf="loggedInUser?.signupDate">
+            <h2>Tag vagy ezóta:</h2>
+            <p>{{loggedInUser!.signupDate | dateFormat}}</p>
+        </div>
+        <mat-divider></mat-divider>
+        <button mat-raised-button (click)="deleteAccount()" color="warn">Törlés</button>
+    </div>
+</main>

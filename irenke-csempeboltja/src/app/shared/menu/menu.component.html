@@ -15,6 +15,10 @@
         <mat-icon matListItemIcon>shield_person</mat-icon>
         <span matListItemTitle>Admin</span>
     </a>
+    <a *ngIf="loggedInUser" mat-list-item (click)="close()" routerLink="profile">
+        <mat-icon matListItemIcon>person</mat-icon>
+        <span matListItemTitle>Profil</span>
+    </a>
     <a *ngIf="!loggedInUser" mat-list-item (click)="close()" routerLink="login">
         <mat-icon matListItemIcon>login</mat-icon>
         <span matListItemTitle>Bejelentkezés</span>

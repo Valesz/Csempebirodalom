@@ -37,14 +37,11 @@ export class CartComponent implements OnInit {
                     }
                     this.productsInCart.push([next, db + 1]);
                     this.productsInCartObs = of(this.productsInCart);
-                  }
-                )
+                  });
               }
-            }
-          );
+            });
         }
-      } 
-    );
+      });
 
   }
 

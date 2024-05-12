@@ -17,7 +17,8 @@ const routes: Routes = [
   },
   { path: 'login', loadChildren: () => import('./pages/login-page/login-page.module').then(m => m.LoginPageModule) },
   { path: 'cart', loadChildren: () => import('./pages/cart/cart.module').then(m => m.CartModule) },
-  { path: 'admin', loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule) }
+  { path: 'admin', loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule) },
+  { path: 'profile', loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule) }
 ];
 
 @NgModule({

@@ -20,6 +20,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { enviroment } from '../enviroment/enviroment';
+import { DateFormatPipe } from './shared/pipes/date-format.pipe';
 
 @NgModule({
   declarations: [

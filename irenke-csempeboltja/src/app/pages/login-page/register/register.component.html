@@ -3,12 +3,16 @@
     <div class="formGroup">
         <mat-form-field>
             <mat-label>Email</mat-label>
-            <input matInput [formControl]="registerEmail" required placeholder="valaki@gmail.com">
-            <mat-error *ngIf="!registerEmail.valid">Helytelen email!</mat-error>
+            <input matInput [formControl]="email" required placeholder="valaki@gmail.com">
+            <mat-error *ngIf="!email.valid">Helytelen email!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Felhasználónév</mat-label>
+            <input matInput [formControl]="displayName" required>
         </mat-form-field>
         <mat-form-field>
             <mat-label>Jelszó</mat-label>
-            <input matInput [formControl]="registerPassword" required [type]="true ? 'password' : 'text'">
+            <input matInput [formControl]="password" required type="password">
         </mat-form-field>
     </div>
     <button mat-raised-button (click)="register()" color="primary">Regisztráció</button>

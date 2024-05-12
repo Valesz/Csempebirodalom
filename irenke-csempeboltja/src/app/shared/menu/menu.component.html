@@ -11,7 +11,7 @@
         <mat-icon matListItemIcon>shopping_cart</mat-icon>
         <span matListItemTitle>Kosár</span>
     </a>
-    <a mat-list-item (click)="close()" routerLink="admin">
+    <a *ngIf="isAdmin" mat-list-item (click)="close()" routerLink="admin">
         <mat-icon matListItemIcon>shield_person</mat-icon>
         <span matListItemTitle>Admin</span>
     </a>

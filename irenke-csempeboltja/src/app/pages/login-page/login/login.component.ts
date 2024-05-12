@@ -11,21 +11,26 @@ import { AuthService } from '../../../shared/services/auth.service';
 export class LoginComponent {
   loginEmail = new FormControl<string>('')
   loginPassword = new FormControl<string>('')
+  loginFailed?: boolean;
 
   constructor(private router: Router, private authService:AuthService) {
 
   }
 
   login() {
+    if (!this.loginEmail.valid || (this.loginPassword.value?.length || 0) < 6) {
+      this.loginFailed = true;
+      return;
+    }
+
     this.authService.login(this.loginEmail.value as string, this.loginPassword.value as string).then(
       cred => {
-        console.log(cred.user?.email)
+        this.router.navigateByUrl("/main")
       }
     ).catch(
       error => {
-        console.log(error)
+        this.loginFailed = true;
       }
     )
-    this.router.navigateByUrl("/main")
   }
 }

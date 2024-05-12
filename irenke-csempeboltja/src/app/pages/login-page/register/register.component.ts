@@ -15,6 +15,7 @@ export class RegisterComponent {
   email = new FormControl<string>('');
   password = new FormControl<string>('');
   displayName = new FormControl<string>('');
+  registerFailed: boolean = false;
 
   constructor(
       private router: Router,
@@ -23,6 +24,12 @@ export class RegisterComponent {
     ) { }
 
   register() {
+    if (!this.email.valid || (this.password.value?.length || 0) < 6) {
+      this.registerFailed = true;
+      console.log("itt")
+      return;
+    }
+
     this.authService.register(this.email.value as string, this.password.value as string).then(
       (_user) => {
         let tmpUser: User = {
@@ -36,13 +43,15 @@ export class RegisterComponent {
         this.userService.create(tmpUser).then(
           () => this.router.navigateByUrl("/main")
         ).catch(
-          error => console.log(error)
+          error => this.registerFailed = true
         );
         
       }
     ).catch(
       error => {
-        console.log(error)
+        this.registerFailed = true;
+        console.log("itt");
+        return;
       }
     )
   }

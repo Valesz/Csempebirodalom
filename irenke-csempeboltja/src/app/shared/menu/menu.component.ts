@@ -6,7 +6,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent {
-  @Input() loggedInUser?: firebase.default.User | null
+  @Input() loggedInUser?: firebase.default.User | null;
+  @Input() isAdmin?: boolean;
   @Output() onCloseSidenav: EventEmitter<boolean> = new EventEmitter();
   @Output() onLogout: EventEmitter<boolean> = new EventEmitter();
 

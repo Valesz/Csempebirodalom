@@ -45,3 +45,9 @@ button {
 .buttons {
     margin: 40px auto 60px;
 }
+
+@media screen and (max-width: 900px) {
+    .container {
+        width: 250px;
+    }
+}

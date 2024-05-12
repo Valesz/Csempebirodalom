@@ -4,6 +4,8 @@ import { ScrollDispatcher, CdkScrollable } from "@angular/cdk/scrolling";
 import { Navigation, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { AuthService } from './shared/services/auth.service';
+import { UserService } from './shared/services/user.service';
+import { roles } from './shared/constants/constants';
 
 @Component({
 	selector: 'app-root',
@@ -15,13 +17,14 @@ import { AuthService } from './shared/services/auth.service';
 	isOnTop = true;
 	page: string;
 	loggedInUser?: firebase.default.User | null;
-	isAdmin: boolean = false;
+	isAdmin?: boolean;
 
 	constructor(
 		private scrollDispatcher: ScrollDispatcher,
 		private zone: NgZone,
-		private router:Router,
-		private auth:AuthService
+		private router: Router,
+		private auth: AuthService,
+		private userService: UserService
 	) {
 		this.page = this.router.url;
 	}
@@ -53,19 +56,23 @@ import { AuthService } from './shared/services/auth.service';
 			}
 		});
 
-		this.retriveUser();
-	}
-
-	retriveUser() {
 		this.auth.getUser().subscribe(
 			{
 				next: user => {
-					this.loggedInUser = user
-					console.log(this.loggedInUser)
+					this.loggedInUser = user;
+					if (user) {
+						this.userService.getByUid(user?.uid).subscribe(
+							userDb => {
+								if (userDb && userDb.at(0)?.uid === this.loggedInUser?.uid) {
+									this.isAdmin = userDb.at(0)?.role === roles.admin;
+									console.log(this.isAdmin);
+								}
+							});
+						}
+					
 				},
 				error: err => console.log(err)
-			}
-		);
+			});
 	}
 
 	logout() {

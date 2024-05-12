@@ -1,10 +1,12 @@
 <main>
     <h1>Regisztráció</h1>
     <div class="formGroup">
+        <mat-error *ngIf="registerFailed">Sikertelen regisztráció!</mat-error>
         <mat-form-field>
             <mat-label>Email</mat-label>
             <input matInput [formControl]="email" required placeholder="valaki@gmail.com">
-            <mat-error *ngIf="!email.valid">Helytelen email!</mat-error>
+            <mat-error *ngIf="!email.valid">Helytelen email formátum!</mat-error>
+            <mat-error>Sikertelen regisztráció!</mat-error>
         </mat-form-field>
         <mat-form-field>
             <mat-label>Felhasználónév</mat-label>
@@ -13,6 +15,7 @@
         <mat-form-field>
             <mat-label>Jelszó</mat-label>
             <input matInput [formControl]="password" required type="password">
+            <mat-error *ngIf="password.value?.length || 0 < 6">Jelszónak legalább 6 karakter hosszúnak kell lennie!</mat-error>
         </mat-form-field>
     </div>
     <button mat-raised-button (click)="register()" color="primary">Regisztráció</button>
